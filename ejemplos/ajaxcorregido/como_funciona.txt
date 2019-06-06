@@ -1,0 +1,18 @@
+﻿Como funciona
+
+
+El archivo HTML muestra un formulario en pantalla y una tabla
+. 
+El evento ONLOAD que esta asociado a la funcion leer trae los datos que ya estan almacenados en el servidor al momento de cargar la pagina. 
+En rigor, el evento ONLOAD se ejecuta inmediatamente despues de cargar la pagina, es decir, ya contamnos con todos los objetos creados
+. 
+La funcion leer LLAMA al archivo traer.php que se ejecutará en el servidor y nos devuelve la lista de clientes almacenados en la base de datos clientes en el servidor. 
+La funcion que se ejecuta cuando el servidor contesta inserta renglones en la tabla que generamos con nuestro archivo HTML (index.html)
+. 
+La funcion grabar se ejecuta cada vez que se clickea el boton guardar y almacena en el servidor (grabar.php)
+. 
+El archivo crear tablas genera la tabla en el servidor (se supone que se ejecuta solo una vez aunque no borra la tablka cliente si se lo ejecuta varias veces. 
+Toma los datos de variables.inc ya que sino hay que colocarlos en todos los demás (traer y grabar php)
+
+
+
