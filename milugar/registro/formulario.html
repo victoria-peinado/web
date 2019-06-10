@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<h1>Formulario</h1>
+<p>
+<form class="centrado" action="guardar.php" method="post">
+  <div>
+  <p>Nombre de Usuario:</p>
+  <input type="text" name="nombre" required>
+  <br><br>
+  <p>E-mail:</p>
+  <input type="email" name="mail" required>
+  <br><br>
+  <p>Contrseña nueva:</p>
+  <input type="password" name="password" required>
+  <br>
+  <p>Descripción sobre usted:</p>
+   <textarea name="text" rows="5" cols="30">
+
+   </textarea>
+   <h3>Ya casi terminamos:<h3> <br>
+  <input type="button" onclick="alert('Gracias Humano!!')" value="No soy un robot">
+  <br><br>
+  <h2>Aprete enviar para teminar.<h2>
+  <input type="submit" value="Enviar" >
+  </div>
+</form> 
+
+</body>
+</html>

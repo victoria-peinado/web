@@ -1,0 +1,22 @@
+
+
+
+barrab
+{	 padding: 5px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: baseline;
+	align-content: stretch;
+}
+agregar
+{	  background: #ccc;
+	padding: 5px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	
+	align-items: baseline;
+	align-content: stretch;
+}

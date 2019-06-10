@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="menu.css">
+  <link rel="stylesheet" href="biblioteca.css">
+
+</head>
+<body>
+<div class="flex-container">
+  <div style="flex-shrink: 0"><a href="#">Mi lugar</a></div>
+  <div><seleccionado  href="#">Biblioteca</seleccionado ></div>
+  <div><a href="#">Mis cosas</a></div>
+  <div><a href="#">Buscar</a></div>
+ 
+</div>
+  <barrab>
+ <form action="buscar.php" method="post">
+	  
+		
+				<input type="search" size="40">
+				<select name="Tipo">
+					<option value="todo" selected>Todo</option>
+					<option value="anime">Animes</option>
+					<option value="manga">Mangas</option>
+					<option value="libro">Libros</option>
+					<option value="serie">Series</option>
+					<option value="pelicula">Peliculas</option>
+					<option value="otro">Otros</option>
+				</select>
+				<select name="Orden">
+					<option value="a-z">A-Z</option>
+					<option value="z-a">Z-A</option>
+					<option value="otro" selected>Otros</option>
+				</select>
+				
+		 
+	  
+</form> 
+ </barrab>
+  <agregar>
+ <form action="elementos.php" method="post">
+	    <h4>Agregar elemento</h4>
+	   <p>Nombre:
+		<input type="text" name="nombre" required> 
+		Estado:
+		<select name="estado"  required>
+					<option value="finalizado">Finalizado</option>
+					<option value="publicandose">Publicandose</option>
+					<option value="abandonado" selected>Abandonado</option>
+				</select>
+		Tipo:
+		<select name="tipo"  required>
+					<option value="anime">Anime</option>
+					<option value="manga">Manga</option>
+					<option value="libro">Libro</option>
+					<option value="serie">Serie</option>
+					<option value="pelicula">Pelicula</option>
+					<option value="otro">Otro</option>
+		</select>
+		<input type="submit" value="Agregar" >
+		</p>
+</form> 
+
+ 
+ </agregar>
+</body>
+</html>
