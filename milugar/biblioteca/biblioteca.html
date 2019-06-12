@@ -3,11 +3,12 @@
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
- <link rel="stylesheet" href="menu.css">
+ <link rel="stylesheet" href="menu.css"><!-- eliminar el meno y usar el css global-->
   <link rel="stylesheet" href="biblioteca.css">
+  <script type="text/javascript" src="ejemplos.js"></script>
 
 </head>
-<body>
+<body onload="leer();">
 <div class="flex-container">
   <div style="flex-shrink: 0"><a href="#">Mi lugar</a></div>
   <div><seleccionado  href="#">Biblioteca</seleccionado ></div>
@@ -40,18 +41,18 @@
 </form> 
  </barrab>
   <agregar>
- <form action="elementos.php" method="post">
+ <form name="aregarabiblioteca">
 	    <h4>Agregar elemento</h4>
 	   <p>Nombre:
-		<input type="text" name="nombre" required> 
+		<input type="text" id="nombre_elemento" required> 
 		Estado:
-		<select name="estado"  required>
-					<option value="finalizado">Finalizado</option>
+		<select id="estado"  required>
+					<option value="finalizado" selected>Finalizado</option>
 					<option value="publicandose">Publicandose</option>
-					<option value="abandonado" selected>Abandonado</option>
+					<option value="abandonado" >Abandonado</option>
 				</select>
 		Tipo:
-		<select name="tipo"  required>
+		<select id="tipo"  required>
 					<option value="anime">Anime</option>
 					<option value="manga">Manga</option>
 					<option value="libro">Libro</option>
@@ -59,11 +60,12 @@
 					<option value="pelicula">Pelicula</option>
 					<option value="otro">Otro</option>
 		</select>
-		<input type="submit" value="Agregar" >
+		<input type="button" value="Agregar" onclick="grabar();">
 		</p>
 </form> 
 
- 
  </agregar>
+ <table id="mostrar"> 
+			</table> 
 </body>
 </html>
