@@ -3,10 +3,24 @@
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
- <link rel="stylesheet" href="menu.css"><!-- eliminar el meno y usar el css global-->
+
+
+<link rel="stylesheet" href="../menu.css"> <!--eliminar el meno y usar el css global-->
   <link rel="stylesheet" href="biblioteca.css">
   <script type="text/javascript" src="ejemplos.js"></script>
+  <style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
 
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+</style>
 </head>
 <body onload="leer();">
 <div class="flex-container">
@@ -47,18 +61,18 @@
 		<input type="text" id="nombre_elemento" required> 
 		Estado:
 		<select id="estado"  required>
-					<option value="finalizado" selected>Finalizado</option>
-					<option value="publicandose">Publicandose</option>
-					<option value="abandonado" >Abandonado</option>
+					<option value="Finalizado" selected>Finalizado</option>
+					<option value="Publicandose">Publicandose</option>
+					<option value="Abandonado" >Abandonado</option>
 				</select>
 		Tipo:
 		<select id="tipo"  required>
-					<option value="anime">Anime</option>
-					<option value="manga">Manga</option>
-					<option value="libro">Libro</option>
-					<option value="serie">Serie</option>
-					<option value="pelicula">Pelicula</option>
-					<option value="otro">Otro</option>
+					<option value="Anime">Anime</option>
+					<option value="Manga">Manga</option>
+					<option value="Libro">Libro</option>
+					<option value="Serie">Serie</option>
+					<option value="Pelicula">Pelicula</option>
+					<option value="Otro">Otro</option>
 		</select>
 		<input type="button" value="Agregar" onclick="grabar();">
 		</p>
@@ -66,6 +80,7 @@
 
  </agregar>
  <table id="mostrar"> 
+
 			</table> 
 </body>
 </html>

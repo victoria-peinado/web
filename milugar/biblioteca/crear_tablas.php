@@ -1,5 +1,5 @@
 <?php
-include "variables.inc";
+include "../variables.inc";
 $mysqli = new mysqli($host, $user, $pass, $base);
 
 //$mysqli->query("drop table if exists clientes");

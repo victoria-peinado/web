@@ -1,5 +1,5 @@
 <?php
-include "variables.inc";
+include "../variables.inc";
 $mysqli = new mysqli($host, $user, $pass, $base);
 $outp= array();
 $resu = $mysqli->query("select * from clientes order by nombre, tipo ");
