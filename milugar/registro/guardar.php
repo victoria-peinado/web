@@ -1,45 +1,45 @@
 <?php
 
-$HOST = "localhost";
-$USER = "root";
-$PASS = "";
+include "../variables.inc";
 
-$mysqli = new mysqli($HOST,$USER,$PASS);
+$mysqli = new mysqli($host,$user,$pass);
 
 if ($mysqli->connect_error) {
     die('Connection error (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
 }
 
-$dbName = "milugar";
+
 $charsetName = "UTF8";
 $collationName = "utf8_bin";
 
-if( !$mysqli->query("CREATE DATABASE IF NOT EXISTS " . $dbName . " CHARACTER SET " . $charsetName . " COLLATE " . $collationName )) {
+if( !$mysqli->query("CREATE DATABASE IF NOT EXISTS " . $base . " CHARACTER SET " . $charsetName . " COLLATE " . $collationName )) {
     die($mysqli->error);
 
 }
 $mysqli->close();
 
-$mysqli = new mysqli ($HOST,$USER,$PASS,$dbName);
+$mysqli = new mysqli ($host,$user,$pass,$base);
 
 if ($mysqli->connect_error) {
     die('Connection error (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
 }
 
 if ( !$mysqli->query("CREATE TABLE IF NOT EXISTS
-                usid (id INT AUTO_INCREMENT PRIMARY KEY,
+                usuarios (id INT AUTO_INCREMENT PRIMARY KEY,
                 nombre VARCHAR(255) NOT NULL,
 				mail VARCHAR(255) NOT NULL,
 				password VARCHAR(255) NOT NULL,
 				descripcion TEXT)") )  {
                  die($mysqli->error); }
+				 
+				 
+				 
 
-$nombre = $_POST["nombre"];
-$mail = $_POST["mail"];
-$password = $_POST["password"];
-$text = $_POST["text"];
+header("Content-Type: application/json; charset=UTF-8");
+$obj = json_decode($_POST["x"], false);
 
-$consulta = " INSERT INTO usid (nombre,mail,password,descripcion) VALUES  ( '" . $nombre . "' , '" . $mail . "' , '" . $password . "' , '" . $text . "' ) "  ;
+
+$consulta = " INSERT INTO usuarios (nombre,mail,password,descripcion) VALUES  ('".$obj->nombre."','".$obj->email."','".$obj->clave."' ,'".$obj->descripcion."' ) "  ;
 
 
  
