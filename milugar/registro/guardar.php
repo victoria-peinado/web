@@ -34,13 +34,20 @@ if ( !$mysqli->query("CREATE TABLE IF NOT EXISTS
 				 
 				 
 				 
-
+/*
 header("Content-Type: application/json; charset=UTF-8");
 $obj = json_decode($_POST["x"], false);
 
 
 $consulta = " INSERT INTO usuarios (nombre,mail,password,descripcion) VALUES  ('".$obj->nombre."','".$obj->email."','".$obj->clave."' ,'".$obj->descripcion."' ) "  ;
-
+*/
+$nombre = $_POST["nombre"];
+$mail = $_POST["mail"];
+$password = $_POST["clave1"];
+$text = $_POST["text"];
+$consulta = " INSERT INTO usuarios (nombre,mail,password,descripcion) VALUES  ( '" . $nombre . "' , '" . $mail . "' , '" . $password . "' , '" . $text . "' ) "  ;
+ 
+ echo $consulta;
 
  
 if ( !$mysqli->query( $consulta ) ) {
@@ -49,5 +56,5 @@ if ( !$mysqli->query( $consulta ) ) {
 	}
 
 $mysqli -> close ();
-
+header('Location: formulario_correcto.html');
 ?>

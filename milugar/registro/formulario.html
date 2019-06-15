@@ -4,7 +4,60 @@
 <link rel="stylesheet" href="../menu.css">
   <link rel="stylesheet" href="estilo.css">
   <script>
-function comprobarClave(){
+window.onload = function () {
+
+document.formularioContacto.nombre.focus();
+
+document.formularioContacto.addEventListener('submit', validarFormulario);
+
+}
+function validarFormulario(evObject) {
+
+evObject.preventDefault();
+
+var todoCorrecto = true;
+
+var formulario = document.formularioContacto;
+
+for (var i=0; i<formulario.length; i++) {
+
+                if(formulario[i].type =='text') {
+
+                               if (formulario[i].value == null || formulario[i].value.length == 0 || /^\s*$/.test(formulario[i].value)){
+
+                               alert (formulario[i].name+ ' no puede estar vacío o contener sólo espacios en blanco');
+
+                               todoCorrecto=false;
+
+                               }
+
+                }
+
+                }
+
+	clave1 =  document.getElementById('clave1').value;
+	clave2 =  document.getElementById('clave2').value;
+	
+	if (clave1 != clave2)
+		{alert ('Las claves no son iguales');
+		todoCorrecto=false;
+		document.getElementById('clave1').value = '';
+					document.getElementById('clave2').value = '';
+		}
+				
+
+if (todoCorrecto ==true) {formulario.submit();}
+
+}
+
+ /*function comprobarClave(){
+	var email = document.getElementById("mail");
+
+	email.addEventListener("keyup", function (event) {
+	if (email.validity.typeMismatch) 
+	{  email.setCustomValidity("¡Yo esperaba una dirección de correo, cariño!");  }
+	else {    email.setCustomValidity("");  }
+
 	clave1 =  document.getElementById('clave1').value;
 	clave2 =  document.getElementById('clave2').value;
 	
@@ -42,7 +95,7 @@ function comprobarClave(){
 		{alert("Las dos claves son distintas...\n");
 					document.getElementById('clave1').value = '';
 					document.getElementById('clave2').value = '';}
-}
+}*/
 </script>
 </head>
 <body>
@@ -55,24 +108,24 @@ function comprobarClave(){
 
 <h1>Formulario</h1>
 <p>
-<form class="centrado" action="" >
+<form name ="formularioContacto" class="centrado"  action="guardar.php" method="post">
   <div>
   <p>Nombre de Usuario:</p>
-  <input type="text" id="nombre" required>
+  <input type="text" name="nombre" id="nombre" required>
   <br><br>
   <p>E-mail:</p>
-  <input type="email" id="email" required>
+  <input type="email" name="mail" required id="email" >
   <br><br>
-  <p>Contraseña: </p><input type="password" id="clave1" size="20">
+  <p>Contraseña: </p><input name="clave1" type="password" id="clave1" size="20">
   <br>
   <p>Repita la contraseña:</p> <input type="password" id="clave2" size="20">
   <br>
   <p>Descripción sobre usted:</p>
-   <textarea id="text" rows="5" cols="30">
+   <textarea id="text" name="text" rows="5" cols="30">
 
    </textarea>
    <h3>Aprete enviar para teminar.<h3> <br>
-  <input type="button" value="Enviar"  onClick="comprobarClave()" >
+  <input type="submit" value="Enviar" >
   </div>
 </form> 
 
