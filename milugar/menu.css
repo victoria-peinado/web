@@ -9,21 +9,43 @@ a {
 	text-decoration: none;
 }
 
-seleccionado  {
-	color: white;
+ul {
+	  list-style-type: none;
+	  margin: 0;
+	  padding: 0;
+	  overflow: hidden;
+	  background-color: #303030;
+}
+
+.active {
+	 background-color: #303030;
+	 color: white;
+	 width: 345px;
+	 text-align: center;
+	 line-height: 75px;
+	 font-size: 30px;
 	text-decoration: none;
 }
 
-.flex-container {
-  display: flex;
-  align-items: stretch;
- 
+.flexlist {
+	  display: flex;
+	  align-items: stretch;
+	  flex-direction: row;
 }
 
-.flex-container>div {
-  background-color: #303030;
-  width: 400px;
-  text-align: center;
-  line-height: 75px;
-  font-size: 30px;
+.lbutton {
+	 background-color: #303030;
+	 color: white;
+	 width: 335px;
+	 text-align: center;
+	 line-height: 75px;
+	 font-size: 30px;
+}
+
+.lbutton:hover{
+	background-color: #000000;
+}
+
+li {
+	float:left;
 }
