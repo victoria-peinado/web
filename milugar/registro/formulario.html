@@ -25,7 +25,7 @@ for (var i=0; i<formulario.length; i++) {
 
                                if (formulario[i].value == null || formulario[i].value.length == 0 || /^\s*$/.test(formulario[i].value)){
 
-                               alert (formulario[i].name+ ' no puede estar vacío o contener sólo espacios en blanco');
+                               alert (formulario[i].name+ ' no puede estar vacÃ­o o contener sÃ³lo espacios en blanco');
 
                                todoCorrecto=false;
 
@@ -55,7 +55,7 @@ if (todoCorrecto ==true) {formulario.submit();}
 
 	email.addEventListener("keyup", function (event) {
 	if (email.validity.typeMismatch) 
-	{  email.setCustomValidity("¡Yo esperaba una dirección de correo, cariño!");  }
+	{  email.setCustomValidity("Â¡Yo esperaba una direcciÃ³n de correo, cariÃ±o!");  }
 	else {    email.setCustomValidity("");  }
 
 	clave1 =  document.getElementById('clave1').value;
@@ -99,12 +99,13 @@ if (todoCorrecto ==true) {formulario.submit();}
 </script>
 </head>
 <body>
-<div class="flex-container">
-    <div><a href="../principal.html">Mi Lugar</a></div>
-  <div><a href="../biblioteca/biblioteca.html">Biblioteca</a></div>
-  <div><a href="#">Mis cosas</a></div>
-  <div><a href="#">Mi Perfil</a></div>
-</div>
+
+<ul class="flexlist">
+	<li class="lbutton"><a href="../principal.html">Mi Lugar</a></li>
+	<li class="lbutton"><a href="../biblioteca/biblioteca.html">Biblioteca</a></li>
+	<li class="lbutton"><a href="#">Mis cosas</a></li>
+	<li class="lbutton"><a href="#">Mi Perfil</a></li>
+</ul>
 
 <h1>Formulario</h1>
 <p>
@@ -116,11 +117,11 @@ if (todoCorrecto ==true) {formulario.submit();}
   <p>E-mail:</p>
   <input type="email" name="mail" required id="email" >
   <br><br>
-  <p>Contraseña: </p><input name="clave1" type="password" id="clave1" size="20">
+  <p>ContraseÃ±a: </p><input name="clave1" type="password" id="clave1" size="20">
   <br>
-  <p>Repita la contraseña:</p> <input type="password" id="clave2" size="20">
+  <p>Repita la contraseÃ±a:</p> <input type="password" id="clave2" size="20">
   <br>
-  <p>Descripción sobre usted:</p>
+  <p>DescripciÃ³n sobre usted:</p>
    <textarea id="text" name="text" rows="5" cols="30">
 
    </textarea>
