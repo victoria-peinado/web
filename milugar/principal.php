@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-<html>
 
+<html>
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,8 +13,17 @@
   <div><a href="biblioteca/biblioteca.html">Biblioteca</a></div>
   <div><a href="#">Mis cosas</a></div>
   <div><a href="#">Mi Perfil</a></div>
+  <?php
+	session_start();
+		if (isset($_SESSION['logged_nombre'])){
+			echo $_SESSION['logged_nombre'];}
+	 
+	
+?>
 </div>
-
+ <?php
+   if (!isset($_SESSION['logged_nombre'])){
+?>
 <section>
 
   
@@ -27,23 +35,31 @@
 
   </article>
    <inicioc>
-  <form action="principal_g.php" method="post">
-	  <div>
-		  <h4>Iniciar seción</h4>
-		  <p>E-mail:</p>
-		  <input type="email" name="mail" required>
-		  <br><br>
-		  <p>Contrseña:</p>
-		  <input type="password" name="password" required>
-		  <br>
-		  <input type="submit" value="Ingresar" >
-		  <a href="registro/formulario.html">¿No tienes cuenta?</a>
-		  
-	  </div>
-	</form> 
+
+
+	  <form action="principal_g.php" method="post">
+		  <div>
+			  <h4>Iniciar seción</h4>
+			  <p>E-mail:</p>
+			  <input type="email" name="mail" required>
+			  <br><br>
+			  <p>Contrseña:</p>
+			  <input type="password" name="password" required>
+			  <br>
+			  <input type="submit" value="Ingresar" >
+			  <a href="registro/formulario.html">¿No tienes cuenta?</a>
+			  
+		  </div>
+		</form> 
+
  </inicioc>
 </section>
-
+	 <?php
+	}
+	?>
+	 <?php
+   if (isset($_SESSION['logged_nombre'])){
+?>
 <footer>
 </footer>
 <section>
@@ -53,6 +69,9 @@
 
   </article>
 </section>
+	 <?php
+	}
+	?>
 </body>
 </html>
 
