@@ -14,15 +14,19 @@
 	<li class="lbutton"><a href="biblioteca/biblioteca.html">Biblioteca</a></li>
 	<li class="lbutton"><a href="#">Mis cosas</a></li>
 	<li class="lbutton"><a href="perfil/perfil.html">Mi Perfil</a></li>
-</ul>
-  
+
+	<li ><a href="#"><br>
   <?php
 	session_start();
 		if (isset($_SESSION['logged_nombre'])){
+			echo "Usuario:
+			";
 			echo $_SESSION['logged_nombre'];}
 	 
 	
 ?>
+</a></li>
+</ul>
 </div>
  <?php
    if (!isset($_SESSION['logged_nombre'])){
