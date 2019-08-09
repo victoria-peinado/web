@@ -12,15 +12,14 @@
   padding-top: 20px;
   color:white;
   padding: 6px 8px 6px 16px;
-  position:absolute;
-  left:0; top:83px; bottom: 0;
+  position:relative;
 }
 
 /* The navigation menu links */
 .sidenav a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 10%;
   color: #818181;
   display: block;
 }
