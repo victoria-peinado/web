@@ -1,0 +1,27 @@
+
+body {
+  background: #505050;
+  color: #fff;
+}
+.centrado{
+     margin: auto;
+
+     
+   
+  }
+  form {
+  border-radius: 8px;
+  background-color: #303030;
+  text-align:justify;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+  width: 300px;
+}
+h1 {
+	font-size:50px;
+	 text-align:center;
+}
+p {
+  color: #575FA0;
+}

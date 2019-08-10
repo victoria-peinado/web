@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../menu.css">
+  <link rel="stylesheet" href="estilo.css">
+  <script>
+window.onload = function () {
+
+document.formularioContacto.nombre.focus();
+
+document.formularioContacto.addEventListener('submit', validarFormulario);
+
+}
+function validarFormulario(evObject) {
+
+evObject.preventDefault();
+
+var todoCorrecto = true;
+
+var formulario = document.formularioContacto;
+
+for (var i=0; i<formulario.length; i++) {
+
+                if(formulario[i].type =='text') {
+
+                               if (formulario[i].value == null || formulario[i].value.length == 0 || /^\s*$/.test(formulario[i].value)){
+
+                               alert (formulario[i].name+ ' no puede estar vacío o contener sólo espacios en blanco');
+
+                               todoCorrecto=false;
+
+                               }
+
+                }
+
+                }
+
+	clave1 =  document.getElementById('clave1').value;
+	clave2 =  document.getElementById('clave2').value;
+	
+	if (clave1 != clave2)
+		{alert ('Las claves no son iguales');
+		todoCorrecto=false;
+		document.getElementById('clave1').value = '';
+					document.getElementById('clave2').value = '';
+		}
+				
+
+if (todoCorrecto ==true) {formulario.submit();}
+
+}
+
+ /*function comprobarClave(){
+	var email = document.getElementById("mail");
+
+	email.addEventListener("keyup", function (event) {
+	if (email.validity.typeMismatch) 
+	{  email.setCustomValidity("¡Yo esperaba una dirección de correo, cariño!");  }
+	else {    email.setCustomValidity("");  }
+
+	clave1 =  document.getElementById('clave1').value;
+	clave2 =  document.getElementById('clave2').value;
+	
+	if (clave1 == clave2)
+		{
+			var obj = {};
+			obj.nombre = document.getElementById('nombre').value ;
+			obj.email = document.getElementById('email').value;
+			obj.clave = document.getElementById('clave1').value;
+			obj.descripcion = document.getElementById('text').value;
+
+		// convertimos el objeto a formato JSON
+			var parametros = JSON.stringify(obj);
+
+		// creamos un objeto XMLRequest
+			var xmlhttp = new XMLHttpRequest();
+
+		
+		// Que hacer el usuario manda a grabar
+			xmlhttp.open("POST", "guardar.php", true);
+			xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			xmlhttp.send("x=" + parametros); 
+			// Una funcion para ejecutar SI TODO SALIO BIEN, es decir, si se pudo grabar en el servidor. OJO que se ejecuta DESPUES de grabar 
+			xmlhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					document.getElementById('nombre').value = '';
+					document.getElementById('email').value = '';
+					document.getElementById('clave1').value = '';
+					document.getElementById('clave2').value = '';
+					document.getElementById('text').value = '';
+				}
+			};
+		}
+	else
+		{alert("Las dos claves son distintas...\n");
+					document.getElementById('clave1').value = '';
+					document.getElementById('clave2').value = '';}
+}*/
+</script>
+</head>
+<body>
+
+<ul class="flexlist">
+	<li class="lbutton"><a href="../principal.php">Mi Lugar</a></li>
+	<li class="lbutton"><a href="../biblioteca/biblioteca.html">Biblioteca</a></li>
+	<li class="lbutton"><a href="#">Mis cosas</a></li>
+	<li class="lbutton"><a href="#">Mi Perfil</a></li>
+</ul>
+
+<h1>Formulario</h1>
+<p>
+<form name ="formularioContacto" class="centrado"  action="guardar.php" method="post">
+  <div>
+  <p>Nombre de Usuario:</p>
+  <input type="text" name="nombre" id="nombre" required>
+  <br><br>
+  <p>E-mail:</p>
+  <input type="email" name="mail" required id="email" >
+  <br><br>
+  <p>Contraseña: </p><input name="clave1" type="password" id="clave1" size="20">
+  <br>
+  <p>Repita la contraseña:</p> <input type="password" id="clave2" size="20">
+  <br>
+  <p>Descripción sobre usted:</p>
+   <textarea id="text" name="text" rows="5" cols="30">
+
+   </textarea>
+   <h3>Aprete enviar para teminar.<h3> <br>
+  <input type="submit" value="Enviar" >
+  </div>
+</form> 
+
+</body>
+</html>
