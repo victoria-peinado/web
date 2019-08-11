@@ -51,7 +51,11 @@ else
 $resu = $mysqli->query($consulta);
 
 $outp= array();
-$valor= array();
+//<<<<<<< HEAD
+//$valor= array();
+//=======
+//$resu = $mysqli->query("select * from clientes order by nombre, tipo ");
+//>>>>>>> df7b89d57107a73cce79af2d43e75e8a70ac6389
 
 for ($i=0; $i<$resu->num_rows; $i++) 
 	$outp[$i] = $resu->fetch_array(MYSQLI_ASSOC);
