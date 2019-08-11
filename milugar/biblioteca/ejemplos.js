@@ -10,14 +10,13 @@ function grabar () {
 
 // creamos un objeto XMLRequest
 	var xmlhttp = new XMLHttpRequest();
-//NOFUNCIONAAAAAAAAAA
+
 // Una funcion para ejecutar SI TODO SALIO BIEN, es decir, si se pudo grabar en el servidor. OJO que se ejecuta DESPUES de grabar 
 	xmlhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
 			document.getElementById('nombre_elemento').value = '';
-			document.getElementById('estado').value = 'Finalizado';
-			document.getElementById('tipo').value = 'Anime';
-			
+			document.getElementById('estado').value = '';
+			document.getElementById('tipo').value = '';
 			leer();
 		}
 	};

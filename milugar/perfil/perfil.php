@@ -41,7 +41,11 @@
 	<!-- Side navigation -->
 	<div class="sidenav">
 		<img src="http://plantsrescue.com/wp-content/uploads/2013/11/Rosa-Mister-Lincoln-2.jpg" alt="Avatar"> </img>
-		<p><h4>Username</h4></p>
+		<p><h4> <?php
+			session_start();
+				if (isset($_SESSION['logged_nombre'])){
+					echo $_SESSION['logged_nombre'];}
+		?></h4></p>
 		<a style="position:absolute;  bottom: 0;  left: 0; font-size:18px" href="#">Logout</a> <!--tuve que poner el style acá adentro porque si no no me dejaba cambiar el tamaño del link y no c por qué-->
 		
 	</div>
@@ -49,8 +53,10 @@
 	    <h2 style="background-color:#626893; color:#efefef;text-align:center;">
 		 ABOUT
 	    </h2>
-		 <p>ARE YOU CHANGING!</p> 
-		 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut risus at libero vehicula iaculis at non odio. Phasellus cursus tortor in erat bibendum, a suscipit ex ultricies. Maecenas nulla quam, mattis vel felis ut, malesuada malesuada neque. Sed ultricies tristique urna id malesuada. Nunc ligula magna, dictum ut lacinia vel, egestas et sem. Proin sodales semper tempus. Proin mattis neque in sollicitudin mollis. Sed finibus sed mi nec lacinia. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris tempor enim at pharetra eleifend. Sed sapien est, suscipit sit amet ligula in, rutrum pulvinar felis. Nam efficitur a tortor in facilisis. Fusce lacinia turpis et magna mattis dapibus. Phasellus aliquam porta lectus eget faucibus. Integer ornare aliquam vulputate.</p>
+		 <p><?php
+				if (isset($_SESSION['logged_descripcion'])){
+					echo $_SESSION['logged_descripcion'];}
+		?></p>
 	</div>
 
 </body>
