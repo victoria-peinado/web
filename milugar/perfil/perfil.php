@@ -46,7 +46,7 @@
 				if (isset($_SESSION['logged_nombre'])){
 					echo $_SESSION['logged_nombre'];}
 		?></h4></p>
-		<a style="position:absolute;  bottom: 0;  left: 0; font-size:18px" href="#">Logout</a> <!--tuve que poner el style acá adentro porque si no no me dejaba cambiar el tamaño del link y no c por qué-->
+		<a style="position:absolute;  bottom: 100;  left: 0; font-size:18px" href="#">Logout</a> <!--tuve que poner el style acá adentro porque si no no me dejaba cambiar el tamaño del link y no c por qué-->
 		
 	</div>
 	<div class="main">

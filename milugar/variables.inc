@@ -1,6 +1,6 @@
 <?php
-$user='miusuario';
+$user='poli_uno';
 $host='localhost';
-$pass='miclave';
-$base='milugar';
+$pass='poli1';
+$base='poli_uno';
 ?>
