@@ -1,3 +1,4 @@
+
 function grabar () {
 //objeto nuevo al que cargamos los datos que el usuario puso en los inputs a los que identificamos por su ID
 	var obj = {};
@@ -27,11 +28,23 @@ function grabar () {
 	xmlhttp.send("x=" + parametros); 
 }
 
+
+
 function leer () {
 //Esta funcion va a leer todo lo que este almacenado en la base de datos y lo coloca en una tabla
 	var tabla = document.getElementById('mostrar');
 //vaciamos la tabla
-	while(tabla.rows.length>0) tabla.deleteRow(0);
+	while(tabla.rows.length>1) tabla.deleteRow(1);
+	
+
+				
+    var nombre = document.getElementById("search").value;
+    var tipo = document.getElementById("stipo").value;
+	var estado = document.getElementById("sestado").value;
+    var orden = document.getElementById("orden").value;	
+    var vars = "nombre="+nombre+"&tipo="+tipo+"&orden="+orden+"&estado="+estado;
+	
+
 // creamos un objeto XMLRequest
 	var xmlhttp = new XMLHttpRequest();
 
@@ -51,6 +64,7 @@ function leer () {
 			}
 		}
 	};
-	xmlhttp.open("GET", 'traer.php', true);
-	xmlhttp.send();
+	xmlhttp.open("POST", "traer.php", true);
+	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");	
+	xmlhttp.send( vars );
 }

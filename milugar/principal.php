@@ -13,7 +13,7 @@
 
   <ul class="flexlist">
 	<li class="active">Mi Lugar</li>
-	<li class="lbutton"><a href="biblioteca/biblioteca.html">Biblioteca</a></li>
+	<li class="lbutton"><a href="biblioteca/biblioteca.php">Biblioteca</a></li>
 	<li class="lbutton"><a href="#">Mis cosas</a></li>
 	<li class="lbutton"><a href="perfil/perfil.html">Mi Perfil</a></li>
 

@@ -8,19 +8,25 @@
 
 <link rel="stylesheet" href="../menu.css"> <!--eliminar el meno y usar el css global-->
   <link rel="stylesheet" href="biblioteca.css">
-  <script type="text/javascript" src="ejemplos.js"></script>
+  <script type="text/javascript" src="ejemplos2.js"></script>
   <style>
 table {
   border-collapse: collapse;
   width: 100%;
 }
 
-th, td {
+ td {
   text-align: left;
   padding: 8px;
 }
+th{
+  text-align: left;
+  padding: 8px;
+     font-weight: bold;
+}
 
 tr:nth-child(even) {background-color: #f2f2f2;}
+
 </style>
 </head>
 <body onload="leer();">
@@ -36,8 +42,14 @@ tr:nth-child(even) {background-color: #f2f2f2;}
  <form nama ="filtros">
 	  
 		
-				<input type="search" size="40">
-				<select name="Tipo">
+				<input id="search" type="text" size="40">
+				<select id="sestado"  required>
+					<option value="todo" selected>Todo</option>
+					<option value="Finalizado">Finalizado</option>
+					<option value="Publicandose">Publicandose</option>
+					<option value="Abandonado" >Abandonado</option>
+				</select>
+				<select id="stipo">
 					<option value="todo" selected>Todo</option>
 					<option value="anime">Animes</option>
 					<option value="manga">Mangas</option>
@@ -46,10 +58,9 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 					<option value="pelicula">Peliculas</option>
 					<option value="otro">Otros</option>
 				</select>
-				<select name="Orden">
-					<option value="a-z">A-Z</option>
+				<select id="orden">
+					<option value="a-z" selected>A-Z</option>
 					<option value="z-a">Z-A</option>
-					<option value="otro" selected>Otros</option>
 				</select>
 				
 					<input type="button" value="Filtrar" onclick="leer();">
@@ -60,7 +71,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
  <form name="aregarabiblioteca">
 	    <h4>Agregar elemento</h4>
 	   <p>Nombre:
-		<input type="text" id="nombre_elemento" required value=document.getElementById('nombre_elemento').value > 
+		<input type="text" id="nombre_elemento" required > 
 		Estado:
 		<select id="estado"  required>
 					<option value="Finalizado" selected>Finalizado</option>
@@ -82,7 +93,11 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 
  </agregar>
  <table id="mostrar"> 
-
+	 <tr>
+		<th>Nombre</th>
+		<th>Estado</th>
+		<th>Tipo</th>
+	  </tr>
 			</table> 
 </body>
 </html>
