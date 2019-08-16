@@ -25,15 +25,15 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 </head>
 <body onload="leer();">
 <ul class="flexlist">
-	<li class="lbutton"><a href="../index.php">Mi Lugar</a></li>
+	<li class="lbutton"><a href="../principal.php">Mi Lugar</a></li>
 	<li class="active">Biblioteca</li>
 	<li class="lbutton"><a href="#">Mis cosas</a></li>
-	<li class="lbutton"><a href="../perfil/perfil.php">Mi Perfil</a></li>
+	<li class="lbutton"><a href="../perfil/perfil.html">Mi Perfil</a></li>
 </ul>
  
 
  <barrab>
- <form nama ="filtros">
+ <form action="buscar.php" method="post">
 	  
 		
 				<input type="search" size="40">
@@ -52,7 +52,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 					<option value="otro" selected>Otros</option>
 				</select>
 				
-					<input type="button" value="Filtrar" onclick="leer();">
+		 
 	  
 </form> 
  </barrab>
@@ -60,7 +60,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
  <form name="aregarabiblioteca">
 	    <h4>Agregar elemento</h4>
 	   <p>Nombre:
-		<input type="text" id="nombre_elemento" required value=document.getElementById('nombre_elemento').value > 
+		<input type="text" id="nombre_elemento" required> 
 		Estado:
 		<select id="estado"  required>
 					<option value="Finalizado" selected>Finalizado</option>

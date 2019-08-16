@@ -12,7 +12,7 @@ $cliente = $mysqli->query("create table if not exists clientes
 		key(nombre)
 	)");
 if ($cliente == 1) 
-	echo 'La tabla de <font color="red" size="+2">clientes</font> se cre&oacute; con &eacute;xito <br>';
+	echo 'La tabla de <font color="red" size="+2">elementos</font> se cre&oacute; con &eacute;xito <br>';
 else
 	echo 'problemas con la tabla de clientes'.'<br>';
 

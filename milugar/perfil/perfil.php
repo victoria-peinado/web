@@ -32,7 +32,7 @@
 	<!-- Page content -->
 	<div class="top">
 		<ul class="flexlist">
-			<li class="lbutton"><a href="../principal.php">Mi Lugar</a></li>
+			<li class="lbutton"><a href="../index.php">Mi Lugar</a></li>
 			<li class="lbutton"><a href="../biblioteca/biblioteca.php">Biblioteca</a></li>
 			<li class="lbutton"><a href="#">Mis cosas</a></li>
 			<li class="active">Mi Perfil</li>
