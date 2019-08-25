@@ -49,17 +49,64 @@ function leer () {
 
 // Una funcion para ejecutar SI TODO SALIO BIEN, es decir, si se pudo leer del servidor. OJO que se ejecuta DESPUES de leer 
 	xmlhttp.onreadystatechange = function() {
+
+		
 		if (this.readyState == 4 && this.status == 200) {
 			var myObj = JSON.parse(this.responseText);
 // Se supone que recibo un array de objetos donde cada item tiene tres campos. 
 			for (var i = 0; i < myObj.length; i++) {
 				registro = tabla.insertRow();
+				
+
 				campo = registro.insertCell(-1);
 				campo.innerHTML = myObj[i].nombre;
 				campo = registro.insertCell(-1);
 				campo.innerHTML = myObj[i].estado;
 				campo = registro.insertCell(-1);
 				campo.innerHTML = myObj[i].tipo;
+				//muestro el id
+				//campo = registro.insertCell(-1);
+				//campo.innerHTML = myObj[i].id;
+				//creo imagen para editar
+				campo = registro.insertCell(-1);
+				var imagen = document.createElement("img");
+				imagen.src="imagenes/edit.png";
+				imagen.addEventListener ("click", function() {
+				alert("funcion editar pendiente");
+				});
+				imagen.height="15";
+				campo.appendChild(imagen);
+				//var espacio = document.createElement("div");
+				//espacio.height="15";
+				//campo.appendChild(espacio);
+				var imagen2 = document.createElement("img");
+				imagen2.src="imagenes/delete.png";
+				imagen2.addEventListener ("click", function() {
+				alert("funcion eliminar pendiente ");
+				});
+				imagen2.height="15";
+				campo.appendChild(imagen2);
+				
+				var imagen3 = document.createElement("img");
+				imagen3.src="imagenes/save.png";
+				imagen3.addEventListener ("click", function() {
+				alert("funcion agregar a lista pendiente");
+				});
+				imagen3.height="15";
+				campo.appendChild(imagen3);
+				
+				/*//creo un boton
+				var button = document.createElement("button");
+				button.innerHTML = "Editar";
+				
+				campo = registro.insertCell(-1);
+				campo.appendChild(button);
+
+				// 3. Add event handler
+				button.addEventListener ("click", function() {
+				//alert("did something");
+				});*/
+				
 			}
 		}
 	};
