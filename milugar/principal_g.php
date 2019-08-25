@@ -31,7 +31,7 @@ if ($resu->num_rows === 1)
 		$_SESSION['logged_mail'] = $mail;
 	 
 
-	header("Location: principal.php");
+	header("Location: index.php");
 	die();
 
 		echo '<p>Hola: ' ;
