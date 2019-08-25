@@ -80,7 +80,7 @@
 <section>
   <article>
     <h1>En emisi&oacuten</h1>
-    <p>Inicie seci&oacuten para acceder a esta funci&oacuten.</p>
+    <p>Pendiente.</p>
 
   </article>
 </section>
