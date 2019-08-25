@@ -2,8 +2,8 @@
 include "../variables.inc";
 $mysqli = new mysqli($host, $user, $pass, $base);
 
-//$mysqli->query("drop table if exists clientes");
-$cliente = $mysqli->query("create table if not exists clientes 
+//$mysqli->query("drop table if exists elementos");
+$cliente = $mysqli->query("create table if not exists elementos 
 	(
 		id INT AUTO_INCREMENT PRIMARY KEY,
 		nombre VARCHAR(255) NOT NULL,
@@ -12,9 +12,9 @@ $cliente = $mysqli->query("create table if not exists clientes
 		key(nombre)
 	)");
 if ($cliente == 1) 
-	echo 'La tabla de <font color="red" size="+2">clientes</font> se cre&oacute; con &eacute;xito <br>';
+	echo 'La tabla de <font color="red" size="+2">elementos</font> se cre&oacute; con &eacute;xito <br>';
 else
-	echo 'problemas con la tabla de clientes'.'<br>';
+	echo 'problemas con la tabla de elementos'.'<br>';
 
 ?>
 
