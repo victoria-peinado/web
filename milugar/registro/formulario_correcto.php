@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html>
 <head>
 <link rel="stylesheet" href="../menu.css">
@@ -11,6 +11,15 @@
 	<li class="lbutton"><a href="../biblioteca/biblioteca.php">Biblioteca</a></li>
 	<li class="lbutton"><a href="#">Mis cosas</a></li>
 	<li class="lbutton"><a href="#">Mi Perfil</a></li>
+	
+	<?php
+	session_start();
+   if (isset($_SESSION['logged_nombre'])){
+	?>
+	<li class="lbutton"><a href="../perfil/perfil.php">>Mi Perfil</a></li>
+	<?php
+	}
+	?>
 </ul>
 <h3>Se ha registrado con exito.<h3>
 <a href="../index.php">Volver</a>

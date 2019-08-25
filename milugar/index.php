@@ -15,11 +15,17 @@
 	<li class="active">Mi Lugar</li>
 	<li class="lbutton"><a href="biblioteca/biblioteca.php">Biblioteca</a></li>
 	<li class="lbutton"><a href="#">Mis cosas</a></li>
-	<li class="lbutton"><a href="perfil/perfil.php">Mi Perfil</a></li>
-
+	<?php
+	session_start();
+   if (isset($_SESSION['logged_nombre'])){
+	?>
+		<li class="lbutton"><a href="perfil/perfil.php">Mi Perfil</a></li>
+	<?php
+	}
+	?>
 	<li class="userbutton"><a href="#"><br>
 		 <?php
-			session_start();
+			
 				if (isset($_SESSION['logged_nombre'])){
 					echo "Usuario:
 					";
