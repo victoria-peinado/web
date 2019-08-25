@@ -75,6 +75,7 @@ function leer () {
 				alert("funcion editar pendiente");
 				});
 				imagen.height="15";
+				imagen.style.paddingRight  ="10px";
 				campo.appendChild(imagen);
 				//var espacio = document.createElement("div");
 				//espacio.height="15";
@@ -85,6 +86,7 @@ function leer () {
 				alert("funcion eliminar pendiente ");
 				});
 				imagen2.height="15";
+				imagen2.style.paddingRight  ="10px";
 				campo.appendChild(imagen2);
 				
 				var imagen3 = document.createElement("img");
