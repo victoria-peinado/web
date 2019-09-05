@@ -7,11 +7,11 @@
 
 	<link rel="stylesheet" href="../menu.css"> <!--eliminar el meno y usar el css global-->
 
-	<link rel="stylesheet" href="perfil.css">
-	  
+	<link rel="stylesheet" href="perfil.css">  
 	
-	  
-	  <style>
+	<title>Mi Perfil</title>
+
+	<style>
 		table {
 			  border-collapse: collapse;
 			  width: 100%;

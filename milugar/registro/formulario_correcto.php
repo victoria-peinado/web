@@ -1,11 +1,17 @@
 
 <html>
 <head>
+
+<title>Registro</title>
+
 <link rel="stylesheet" href="../menu.css">
   <link rel="stylesheet" href="estilo.css">
   <meta charset="utf-8">
+
 </head>
+
 <body>
+
 <ul class="flexlist">
 	<li class="lbutton"><a href="../index.php">Mi Lugar</a></li>
 	<li class="lbutton"><a href="../biblioteca/biblioteca.php">Biblioteca</a></li>
@@ -23,5 +29,6 @@
 </ul>
 <h3>Se ha registrado con exito.<h3>
 <a href="../index.php">Volver</a>
+
 </body>
 </html>
