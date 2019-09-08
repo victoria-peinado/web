@@ -9,7 +9,10 @@
 <link rel="stylesheet" href="../menu.css"> <!--eliminar el meno y usar el css global-->
   <link rel="stylesheet" href="biblioteca.css">
   <script type="text/javascript" src="ejemplos2.js"></script>
-  <style>
+
+<title>Biblioteca</title>
+
+<style>
 table {
   border-collapse: collapse;
   width: 100%;
