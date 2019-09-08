@@ -36,7 +36,7 @@ function leer () {
 	while(tabla.rows.length>1) tabla.deleteRow(1);
 	
 
-				
+	//valores de los filtros 			
     var nombre = document.getElementById("search").value;
     var tipo = document.getElementById("stipo").value;
 	var estado = document.getElementById("sestado").value;
@@ -56,8 +56,8 @@ function leer () {
 // Se supone que recibo un array de objetos donde cada item tiene tres campos. 
 			for (var i = 0; i < myObj.length; i++) {
 				registro = tabla.insertRow();
-				
-
+			
+			
 				campo = registro.insertCell(-1);
 				campo.innerHTML = myObj[i].nombre;
 				campo = registro.insertCell(-1);

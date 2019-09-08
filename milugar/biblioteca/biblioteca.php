@@ -47,7 +47,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
  
 
  <barrab>
- <form nama ="filtros">
+ <form name ="filtros">
 	  
 		
 				<input id="search" type="text" size="40">
