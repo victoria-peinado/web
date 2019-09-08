@@ -28,13 +28,11 @@ function grabar () {
 	xmlhttp.send("x=" + parametros); 
 }
 
-
-function eliminar (a) {
-//objeto nuevo al que cargamos los datos que el usuario puso en los inputs a los que identificamos por su ID
-	var obj = {};
-	obj = a;
-
-// convertimos el objeto a formato JSON
+function eliminar (a)
+{
+	obj=a.id;
+	
+	// convertimos el objeto a formato JSON
 	var parametros = JSON.stringify(obj);
 	
 
@@ -44,13 +42,17 @@ function eliminar (a) {
 // Una funcion para ejecutar SI TODO SALIO BIEN, es decir, si se pudo grabar en el servidor. OJO que se ejecuta DESPUES de grabar 
 	xmlhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
+			
 			leer();
+			
 		}
 	};
 // Que hacer el usuario manda a grabar
 	xmlhttp.open("POST", "eliminar_elemento.php", true);
 	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xmlhttp.send("x=" + parametros); 
+	xmlhttp.send("x=" + parametros);
+	
+	
 }
 
 function leer () {
@@ -91,6 +93,7 @@ function leer () {
 				//muestro el id
 				//campo = registro.insertCell(-1);
 				//campo.innerHTML = myObj[i].id;
+				
 				//creo imagen para editar
 				campo = registro.insertCell(-1);
 				var imagen = document.createElement("img");
@@ -106,9 +109,10 @@ function leer () {
 				//campo.appendChild(espacio);
 				var imagen2 = document.createElement("img");
 				imagen2.src="imagenes/delete.png";
-				imagen2.addEventListener ("click",function() {
-				alert("funcion editar pendiente");
-				});
+				imagen2.id =myObj[i].id;
+				imagen2.addEventListener ("click",  function(){eliminar(this)},false);
+				
+				
 				imagen2.height="15";
 				imagen2.style.paddingRight  ="10px";
 				campo.appendChild(imagen2);
@@ -140,3 +144,4 @@ function leer () {
 	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");	
 	xmlhttp.send( vars );
 }
+
