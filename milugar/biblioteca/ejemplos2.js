@@ -8,6 +8,7 @@ function grabar () {
 
 // convertimos el objeto a formato JSON
 	var parametros = JSON.stringify(obj);
+	
 
 // creamos un objeto XMLRequest
 	var xmlhttp = new XMLHttpRequest();
@@ -28,6 +29,29 @@ function grabar () {
 }
 
 
+function eliminar (a) {
+//objeto nuevo al que cargamos los datos que el usuario puso en los inputs a los que identificamos por su ID
+	var obj = {};
+	obj = a;
+
+// convertimos el objeto a formato JSON
+	var parametros = JSON.stringify(obj);
+	
+
+// creamos un objeto XMLRequest
+	var xmlhttp = new XMLHttpRequest();
+
+// Una funcion para ejecutar SI TODO SALIO BIEN, es decir, si se pudo grabar en el servidor. OJO que se ejecuta DESPUES de grabar 
+	xmlhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			leer();
+		}
+	};
+// Que hacer el usuario manda a grabar
+	xmlhttp.open("POST", "eliminar_elemento.php", true);
+	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xmlhttp.send("x=" + parametros); 
+}
 
 function leer () {
 //Esta funcion va a leer todo lo que este almacenado en la base de datos y lo coloca en una tabla
@@ -82,8 +106,8 @@ function leer () {
 				//campo.appendChild(espacio);
 				var imagen2 = document.createElement("img");
 				imagen2.src="imagenes/delete.png";
-				imagen2.addEventListener ("click", function() {
-				alert("funcion eliminar pendiente ");
+				imagen2.addEventListener ("click",function() {
+				alert("funcion editar pendiente");
 				});
 				imagen2.height="15";
 				imagen2.style.paddingRight  ="10px";

@@ -53,7 +53,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
  <form name ="filtros">
 	  
 		
-				<input id="search" type="text" size="40">
+				<input id="search" type="text" onchange="leer();" size="40">
 				<select id="sestado"  required>
 					<option value="todo" selected>Todo</option>
 					<option value="Finalizado">Finalizado</option>
@@ -82,15 +82,15 @@ tr:nth-child(even) {background-color: #f2f2f2;}
  <form name="aregarabiblioteca">
 	    <h4>Agregar elemento</h4>
 	   <p>Nombre:
-		<input type="text" id="nombre_elemento" required > 
+		<input type="text" id="nombre_elemento"> 
 		Estado:
-		<select id="estado"  required>
+		<select id="estado">
 					<option value="Finalizado" selected>Finalizado</option>
 					<option value="Publicandose">Publicandose</option>
 					<option value="Abandonado" >Abandonado</option>
 				</select>
 		Tipo:
-		<select id="tipo"  required>
+		<select id="tipo">
 					<option value="Anime">Anime</option>
 					<option value="Manga">Manga</option>
 					<option value="Libro">Libro</option>
