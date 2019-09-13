@@ -47,50 +47,16 @@ else
 }
 
 
- //$consulta = "select * from elementos order by nombre, tipo " ;
+
 $resu = $mysqli->query($consulta);
 
 $outp= array();
-//<<<<<<< HEAD
-//$valor= array();
-//=======
-//$resu = $mysqli->query("select * from elementos order by nombre, tipo ");
-//>>>>>>> df7b89d57107a73cce79af2d43e75e8a70ac6389
+
 
 for ($i=0; $i<$resu->num_rows; $i++) 
 	$outp[$i] = $resu->fetch_array(MYSQLI_ASSOC);
 
-// echo '---------------';
-// echo $outp[1]['id'];
-// echo '---------------';
 
-
-/*
-if (array_key_exists("nombre", $_POST) ) {
-
-    $nombre = $_POST["nombre"];
-    // do stuff with params
-
-    // echo 'Yes, it works!' ;
-	$valor ['id'] = '0';	
-	$valor ['nombre'] = 'ok';
-	$valor ['estado'] = 'ok';
-	$valor ['tipo'] = 'ok';
-
-	
-	$outp[$resu->num_rows] = $valor;
-
-} else {
-	
-    // echo 'Invalid parameters!';
-	$valor ['id'] = '0';	
-	$valor ['nombre'] = 'vacio';
-	$valor ['estado'] = 'vacio';
-	$valor ['tipo'] = $_POST;
-	
-	$outp[$resu->num_rows] = $valor;
-}
-*/
 
 
 echo json_encode($outp);

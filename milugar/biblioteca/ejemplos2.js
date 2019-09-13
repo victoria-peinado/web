@@ -47,8 +47,38 @@ function eliminar (a)
 			
 		}
 	};
-// Que hacer el usuario manda a grabar
+// Que hacer el usuario manda a eliminar
 	xmlhttp.open("POST", "eliminar_elemento.php", true);
+	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xmlhttp.send("x=" + parametros);
+	
+	
+}
+function editar (a)
+{	
+
+	obj=a.id;
+	
+	// convertimos el objeto a formato JSON
+	var parametros = JSON.stringify(obj);
+	
+
+// creamos un objeto XMLRequest
+	var xmlhttp = new XMLHttpRequest();
+
+// Una funcion para ejecutar SI TODO SALIO BIEN, es decir, si se pudo grabar en el servidor. OJO que se ejecuta DESPUES de grabar 
+	xmlhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			var myObj1 = (this.responseText);
+				campo = registro.insertCell(-1);
+				campo.innerHTML = myObj1; //celda con el nombre
+				
+	
+			
+		}
+	};
+// Que hacer el usuario manda a editar
+	xmlhttp.open("POST", "editar_elemento.php", true);
 	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xmlhttp.send("x=" + parametros);
 	
@@ -85,57 +115,45 @@ function leer () {
 			
 			
 				campo = registro.insertCell(-1);
-				campo.innerHTML = myObj[i].nombre;
+				campo.innerHTML = myObj[i].nombre; //celda con el nombre
+				
 				campo = registro.insertCell(-1);
-				campo.innerHTML = myObj[i].estado;
+				campo.innerHTML = myObj[i].estado;//celda con el estado
+				
 				campo = registro.insertCell(-1);
-				campo.innerHTML = myObj[i].tipo;
+				campo.innerHTML = myObj[i].tipo;//celda con el tipo
+				
 				//muestro el id
 				//campo = registro.insertCell(-1);
 				//campo.innerHTML = myObj[i].id;
 				
-				//creo imagen para editar
-				campo = registro.insertCell(-1);
-				var imagen = document.createElement("img");
+				
+				campo = registro.insertCell(-1); //creo una columna en la que meto tres imagenes que llaman funciones
+				campo.id=myObj[i].id;
+				var imagen = document.createElement("img",myObj[i].id); //imagen que llama a la funcion editar
 				imagen.src="imagenes/edit.png";
-				imagen.addEventListener ("click", function() {
-				alert("funcion editar pendiente");
-				});
+				
+				imagen.addEventListener ("click", function() {editar(this.parentNode);},false);
 				imagen.height="15";
 				imagen.style.paddingRight  ="10px";
 				campo.appendChild(imagen);
-				//var espacio = document.createElement("div");
-				//espacio.height="15";
-				//campo.appendChild(espacio);
-				var imagen2 = document.createElement("img");
+				
+
+				var imagen2 = document.createElement("img",{name: myObj[i].id});// imagen que llama a la funcion eliminar
 				imagen2.src="imagenes/delete.png";
-				imagen2.id =myObj[i].id;
-				imagen2.addEventListener ("click",  function(){eliminar(this)},false);
-				
-				
+				//imagen2.name =myObj[i].id;
+				imagen2.addEventListener ("click",  function(){eliminar(this.parentNode)},false);
 				imagen2.height="15";
 				imagen2.style.paddingRight  ="10px";
 				campo.appendChild(imagen2);
 				
-				var imagen3 = document.createElement("img");
+				var imagen3 = document.createElement("img");//imagen que llama a la funcion agregara a lista
 				imagen3.src="imagenes/save.png";
-				imagen3.addEventListener ("click", function() {
-				alert("funcion agregar a lista pendiente");
-				});
+				imagen3.addEventListener ("click", function() {alert(this.parentNode.id);});
 				imagen3.height="15";
 				campo.appendChild(imagen3);
 				
-				/*//creo un boton
-				var button = document.createElement("button");
-				button.innerHTML = "Editar";
-				
-				campo = registro.insertCell(-1);
-				campo.appendChild(button);
 
-				// 3. Add event handler
-				button.addEventListener ("click", function() {
-				//alert("did something");
-				});*/
 				
 			}
 		}
