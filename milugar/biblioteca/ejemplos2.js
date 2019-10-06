@@ -30,7 +30,7 @@ function grabar () {
 
 function eliminar (a)
 {
-	obj=a.id;
+	var obj=a.id;
 	
 	// convertimos el objeto a formato JSON
 	var parametros = JSON.stringify(obj);
@@ -56,9 +56,12 @@ function eliminar (a)
 }
 function editar (a)
 {	
-
-	obj=a.id;
+  
+	var obj=a.id;
 	
+var queryString = "?id=" + obj;	
+window.location.href = "../biblioteca/editar/editando.php" + queryString;
+/*
 	// convertimos el objeto a formato JSON
 	var parametros = JSON.stringify(obj);
 	
@@ -72,15 +75,21 @@ function editar (a)
 			var myObj1 = (this.responseText);
 				campo = registro.insertCell(-1);
 				campo.innerHTML = myObj1; //celda con el nombre
+		
 				
-	
+				//var editar =JSON.stringify(myObj1);
+				var editar =myObj1;
+				var queryString = "?" + myObj1;
+				window.location.href = "../biblioteca/editar/editando.php" + queryString;
 			
+			
+								
 		}
 	};
 // Que hacer el usuario manda a editar
-	xmlhttp.open("POST", "editar_elemento.php", true);
+	xmlhttp.open("POST", "traer_elemento.php", true);
 	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xmlhttp.send("x=" + parametros);
+	xmlhttp.send("x=" + parametros);*/
 	
 	
 }

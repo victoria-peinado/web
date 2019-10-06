@@ -1,0 +1,51 @@
+	/**
+				// creamos un objeto XMLRequest
+				var xmlhttp = new XMLHttpRequest();
+				if (this.readyState == 4 && this.status == 200) {
+					
+				}
+				xmlhttp.open("POST", "../biblioteca/editar/editando.php", true);
+				xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				xmlhttp.send("x=" + editar);
+				post('../biblioteca/editar/editando.php', {elements: elements});
+				var queryString = "?" + myObj1;
+				window.location.href = "../biblioteca/editar/editando.php" + queryString;
+				**/
+				/**
+								var http = new XMLHttpRequest();
+								var url = '../biblioteca/editar/editando.php';
+								var params = myObj1;
+								http.open('POST', url, true);
+
+								//Send the proper header information along with the request
+								http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+								http.onreadystatechange = function() {//Call a function when the state changes.
+									if(http.readyState == 4 && http.status == 200) {
+										window.location.href = "../biblioteca/editar/editando.php"
+										alert('1');
+									}
+								}
+								http.send(params);**/
+				/**	
+				function post(dictionary, url, method) {
+				method = method || "post"; // post (set to default) or get
+
+				// Create the form object
+				var form = document.createElement("form");
+				form.setAttribute("method", method);
+				form.setAttribute("action", url);
+
+				// For each key-value pair
+				for (key in dictionary) {
+					//alert('key: ' + key + ', value:' + dictionary[key]); // debug
+					var hiddenField = document.createElement("input");	
+					hiddenField.setAttribute("type", "hidden"); 
+					hiddenField.setAttribute("name", key);
+					hiddenField.setAttribute("value", dictionary[key]);
+					// append the newly created control to the form
+					form.appendChild(hiddenField); 
+				}
+
+				document.body.appendChild(form); // inject the form object into the body section
+				form.submit();**/
