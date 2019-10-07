@@ -80,16 +80,17 @@ for (var i = 0; i < queries.length; i++)
 		<agregar>
 			<form  action="editar_elemento.php" method="post">
 					<h4>Editar elemento</h4>
+					<input type="hidden" name="id" value="<?php echo $id; ?>" >
 				   <p>Nombre:
-					<input type="text" id="nombre_elemento" value="<?php echo $nombre ?>"> 
+					<input type="text" name="nombre" id="nombre" value="<?php echo $nombre; ?>"> 
 					Estado:
-					<select id="estado">
+					<select name="estado" id="estado">
 								<option value="Finalizado">Finalizado</option>
 								<option value="Publicandose">Publicandose</option>
 								<option value="Abandonado" >Abandonado</option>
 							</select>
 					Tipo:
-					<select id="tipo">
+					<select name="tipo" id="tipo">
 								<option value="Anime">Anime</option>
 								<option value="Manga">Manga</option>
 								<option value="Libro">Libro</option>
