@@ -56,5 +56,5 @@ if ( !$mysqli->query( $consulta ) ) {
 	}
 
 $mysqli -> close ();
-header('Location: formulario_correcto.html');
+header('Location: formulario_correcto.php');
 ?>

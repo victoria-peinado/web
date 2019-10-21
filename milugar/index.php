@@ -16,7 +16,7 @@
   <ul class="flexlist">
 	<li class="active">Mi Lugar</li>
 	<li class="lbutton"><a href="biblioteca/biblioteca.php">Biblioteca</a></li>
-	<li class="lbutton"><a href="#">Mis cosas</a></li>
+	<li class="lbutton"><a href="mis_cosas/cosas.php">Mis cosas</a></li>
 	<?php
 	session_start();
    if (isset($_SESSION['logged_nombre'])){

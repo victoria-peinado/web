@@ -7,10 +7,10 @@
 <meta charset="utf-8">
 
 <link rel="stylesheet" href="../menu.css"> <!--eliminar el meno y usar el css global-->
-  <link rel="stylesheet" href="biblioteca.css">
+  <link rel="stylesheet" href="cosas.css">
   <script type="text/javascript" src="ejemplos2.js"></script>
 
-<title>Biblioteca</title>
+<title>Cosas</title>
 
 <style>
 table {
@@ -35,8 +35,8 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 <body onload="leer();">
 <ul class="flexlist">
 	<li class="lbutton"><a href="../index.php">Mi Lugar</a></li>
-	<li class="active">Biblioteca</li>
-	<li class="lbutton"><a href="../mis_cosas/cosas.php">Mis cosas</a></li>
+	<li class="lbutton"><a href="../biblioteca/biblioteca.php">Biblioteca</a></li>
+	<li class="active">Mis cosas</li>
 	<?php
 	session_start();
    if (isset($_SESSION['logged_nombre'])){
@@ -47,7 +47,19 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 	?>
 	
 </ul>
- 
+<div>
+	<form name="aregarabiblioteca">
+		<P>
+			<b>Agregar lista  -> </b>
+			Nombre:
+				<input type="text" id="nombre_elemento"> 
+				
+				<input type="button" value="Agregar" onclick="grabar();">
+				</p>
+	</form> 
+	<h1>Mis listas</h1>
+	 
+</div>
 
  <barrab>
  <form name ="filtros">
@@ -78,29 +90,29 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 	  
 </form> 
  </barrab>
-  <agregar>
- <form name="aregarabiblioteca">
-	    <h4>Agregar elemento</h4>
-	   <p>Nombre:
-		<input type="text" id="nombre_elemento"> 
-		Estado:
-		<select id="estado">
-					<option value="Finalizado" selected>Finalizado</option>
-					<option value="Publicandose">Publicandose</option>
-					<option value="Abandonado" >Abandonado</option>
-				</select>
-		Tipo:
-		<select id="tipo">
-					<option value="Anime">Anime</option>
-					<option value="Manga">Manga</option>
-					<option value="Libro">Libro</option>
-					<option value="Serie">Serie</option>
-					<option value="Pelicula">Pelicula</option>
-					<option value="Otro">Otro</option>
-		</select>
-		<input type="button" value="Agregar" onclick="grabar();">
-		</p>
-</form> 
+ <agregar>
+	<form name="aregarabiblioteca">
+			<h4>Agregar elemento</h4>
+		<p>Nombre:
+			<input type="text" id="nombre_elemento"> 
+			Estado:
+			<select id="estado">
+						<option value="Finalizado" selected>Finalizado</option>
+						<option value="Publicandose">Publicandose</option>
+						<option value="Abandonado" >Abandonado</option>
+					</select>
+			Tipo:
+			<select id="tipo">
+						<option value="Anime">Anime</option>
+						<option value="Manga">Manga</option>
+						<option value="Libro">Libro</option>
+						<option value="Serie">Serie</option>
+						<option value="Pelicula">Pelicula</option>
+						<option value="Otro">Otro</option>
+			</select>
+			<input type="button" value="Agregar" onclick="grabar();">
+			</p>
+	</form> 
 
  </agregar>
  <table id="mostrar"> 

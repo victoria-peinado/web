@@ -34,7 +34,7 @@
 		<ul class="flexlist">
 			<li class="lbutton"><a href="../index.php">Mi Lugar</a></li>
 			<li class="lbutton"><a href="../biblioteca/biblioteca.php">Biblioteca</a></li>
-			<li class="lbutton"><a href="#">Mis cosas</a></li>
+			<li class="lbutton"><a href="../mis_cosas/cosas.php">Mis cosas</a></li>
 			<li class="active">Mi Perfil</li>
 		</ul>
 	</div>
