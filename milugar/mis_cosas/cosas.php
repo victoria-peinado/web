@@ -48,20 +48,31 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 	
 </ul>
 <div>
-	<form name="aregarabiblioteca">
-		<P>
-			<b>Agregar lista  -> </b>
-			Nombre:
-				<input type="text" id="nombre_elemento"> 
+	<agregar>
+		<form name="aregara_lista">
+			<P>
+				<b>Agregar lista  -> </b>
+				Nombre:
+					<input type="text" id="nombre_elemento"> 
+					
+					<input type="button" value="Agregar" onclick="grabar();">
+					</p>
+		</form> 
+	</agregar>
+	<div>
+		<h3>Mis listas</h3>
+		
+		<table id="mostrar_listas"> 
+			<tr>
+				<th>Nombre</th>
 				
-				<input type="button" value="Agregar" onclick="grabar();">
-				</p>
-	</form> 
-	<h1>Mis listas</h1>
+			</tr>
+		</table> 
+	</div>
 	 
 </div>
 
- <barrab>
+<agregar>
  <form name ="filtros">
 	  
 		
@@ -72,15 +83,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 					<option value="Publicandose">Publicandose</option>
 					<option value="Abandonado" >Abandonado</option>
 				</select>
-				<select id="stipo">
-					<option value="todo" selected>Todo</option>
-					<option value="anime">Animes</option>
-					<option value="manga">Mangas</option>
-					<option value="libro">Libros</option>
-					<option value="serie">Series</option>
-					<option value="pelicula">Peliculas</option>
-					<option value="otro">Otros</option>
-				</select>
+				
 				<select id="orden">
 					<option value="a-z" selected>A-Z</option>
 					<option value="z-a">Z-A</option>
@@ -89,38 +92,14 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 					<input type="button" value="Filtrar" onclick="leer();">
 	  
 </form> 
- </barrab>
- <agregar>
-	<form name="aregarabiblioteca">
-			<h4>Agregar elemento</h4>
-		<p>Nombre:
-			<input type="text" id="nombre_elemento"> 
-			Estado:
-			<select id="estado">
-						<option value="Finalizado" selected>Finalizado</option>
-						<option value="Publicandose">Publicandose</option>
-						<option value="Abandonado" >Abandonado</option>
-					</select>
-			Tipo:
-			<select id="tipo">
-						<option value="Anime">Anime</option>
-						<option value="Manga">Manga</option>
-						<option value="Libro">Libro</option>
-						<option value="Serie">Serie</option>
-						<option value="Pelicula">Pelicula</option>
-						<option value="Otro">Otro</option>
-			</select>
-			<input type="button" value="Agregar" onclick="grabar();">
-			</p>
-	</form> 
-
- </agregar>
+</agregar>
+ 
  <table id="mostrar"> 
 	 <tr>
 		<th>Nombre</th>
 		<th>Estado</th>
 		<th>Tipo</th>
 	  </tr>
-			</table> 
+</table> 
 </body>
 </html>
