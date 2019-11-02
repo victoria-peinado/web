@@ -34,6 +34,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 </head>
 <body onload="leerlistas();">
 <ul class="flexlist">
+	<li class="Logo">[Logo]</li>
 	<li class="lbutton"><a href="../index.php">Mi Lugar</a></li>
 	<li class="lbutton"><a href="../biblioteca/biblioteca.php">Biblioteca</a></li>
 	<li class="active">Mis cosas</li>

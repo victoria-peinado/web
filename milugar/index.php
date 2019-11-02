@@ -7,42 +7,35 @@
 <meta charset="utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="menu.css">
-  <link rel="stylesheet" href="principal-estilo.css">
-
+	<link rel="stylesheet" href="menu.css">
+	<link rel="stylesheet" href="principal-estilo.css">
 </head>
 <body>
 
-  <ul class="flexlist">
+<ul class="flexlist">
+	<li class="Logo">[Logo]</li>
 	<li class="active">Mi Lugar</li>
 	<li class="lbutton"><a href="biblioteca/biblioteca.php">Biblioteca</a></li>
 	<li class="lbutton"><a href="mis_cosas/cosas.php">Mis cosas</a></li>
 	<?php
-	session_start();
-   if (isset($_SESSION['logged_nombre'])){
+		session_start();
+		if (isset($_SESSION['logged_nombre'])){
+			?>
+				<li class="userbutton"><a href="perfil/perfil.php"><img src="https://img.icons8.com/ios-glyphs/50/000000/user.png"></a>
+			<?php
+				echo $_SESSION['logged_nombre'];
+			?>
+				</li>
+		<?php
+		}
 	?>
-		<li class="lbutton"><a href="perfil/perfil.php">Mi Perfil</a></li>
-	<?php
-	}
-	?>
-	<li class="userbutton"><a href="#"><br>
-		 <?php
-			
-				if (isset($_SESSION['logged_nombre'])){
-					echo "Usuario:
-					";
-					echo $_SESSION['logged_nombre'];}
-			 
-			
-		?>
-	</a></li>
+
 </ul>
 </div>
  <?php
    if (!isset($_SESSION['logged_nombre'])){
 ?>
 <section>
-
   
   <article>
     <h1>Sobre nosotros</h1>
@@ -51,9 +44,8 @@
 	<p>Es dif&iacutecil recordar las fechas en las que cada historia que est&aacutes leyendo se actualizan. Con nuestro servicio, no es necesario. Rel&aacutejate sabiendo que no te perder&aacutes un solo episodio de esa serie con la que te obsesionaste tanto las &uacuteltimas semanas.  Con nosotros, siempre vas a estar al d&iacutea. </p>
 
   </article>
+
    <inicioc>
-
-
 	  <form action="principal_g.php" method="post">
 		  <div>
 			  <h4>Iniciar seci&oacuten</h4>
@@ -68,8 +60,7 @@
 			  
 		  </div>
 		</form> 
-
- </inicioc>
+	</inicioc>
 </section>
 	 <?php
 	}
@@ -77,8 +68,7 @@
 	 <?php
    if (isset($_SESSION['logged_nombre'])){
 ?>
-<footer>
-</footer>
+
 <section>
   <article>
     <h1>En emisi&oacuten</h1>

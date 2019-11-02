@@ -1,8 +1,15 @@
-body {
-  font-family: Arial, Helvetica, sans-serif;
+html{
+	width: 100%;
+	margin:0% auto;
+	height: 100%;
 }
 
-
+body {
+  width: 100%;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  margin:0% auto;
+}
 
 a {
 	color: #575FA0;
@@ -20,11 +27,10 @@ ul {
 .active {
 	 background-color: #303030;
 	 color: white;
-	 width: 345px;
+	 width: 20%;
 	 text-align: center;
-	 line-height: 75px;
-	 font-size: 30px;
-	text-decoration: none;
+	 padding: 1%;
+	 font-size: 25px;
 }
 
 .flexlist {
@@ -33,13 +39,15 @@ ul {
 	  flex-direction: row;
 }
  
-.lbutton {
+.lbutton, .Logo {
 	 background-color: #303030;
 	 color: white;
-	 width: 335px;
+	 width: 20%;
 	 text-align: center;
-	 line-height: 75px;
-	 font-size: 30px;
+	 padding: 1%;
+	 font-size: 25px;
+	float: left;
+	height: 10%;
 }
 
 .lbutton:hover{
@@ -49,11 +57,12 @@ ul {
 .userbuttton {
 	 background-color: #303030;
 	 color: white;
-	 width: 200px;
+	 width: 20%;
 	 text-align: center;
-	 line-height: 75px;
+	 line-height: 10%;
 	 font-size: 30px;
-}
+	float: right;
+	}
 
 .userbutton:hover{
 	background-color: #000000;

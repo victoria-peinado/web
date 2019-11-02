@@ -34,6 +34,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 </head>
 <body onload="leer();">
 <ul class="flexlist">
+	<li class="Logo">[Logo]</li>
 	<li class="lbutton"><a href="../index.php">Mi Lugar</a></li>
 	<li class="active">Biblioteca</li>
 	<li class="lbutton"><a href="../mis_cosas/cosas.php">Mis cosas</a></li>
@@ -41,8 +42,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 	session_start();
    if (isset($_SESSION['logged_nombre'])){
 	?>
-		<li class="lbutton"><a href="../perfil/perfil.php">Mi Perfil</a></li>
-	<?php
+		<li class="userbutton"><a href="../perfil/perfil.php"><img src="https://img.icons8.com/ios-glyphs/50/000000/user.png"> <br></a></li>	<?php
 	}
 	?>
 	
