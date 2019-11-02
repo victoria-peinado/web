@@ -2,9 +2,9 @@
 function grabar () {
 //objeto nuevo al que cargamos los datos que el usuario puso en los inputs a los que identificamos por su ID
 	var obj = {};
-	obj.nombre = document.getElementById('nombre_elemento').value;
-	obj.estado= document.getElementById('estado').value;
-	obj.tipo = document.getElementById('tipo').value;
+	obj.nombre = document.getElementById('nombre_lista').value;
+	obj.uid= document.getElementById('uid').value;
+	
 
 // convertimos el objeto a formato JSON
 	var parametros = JSON.stringify(obj);
@@ -16,18 +16,17 @@ function grabar () {
 // Una funcion para ejecutar SI TODO SALIO BIEN, es decir, si se pudo grabar en el servidor. OJO que se ejecuta DESPUES de grabar 
 	xmlhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
-			document.getElementById('nombre_elemento').value = '';
-			document.getElementById('estado').value = 'Finalizado';
-			document.getElementById('tipo').value = 'Anime';
-			leer();
+			document.getElementById('nombre_lista').value = '';
+			
+			leerlistas();
 		}
 	};
 // Que hacer el usuario manda a grabar
-	xmlhttp.open("POST", "grabar.php", true);
+	xmlhttp.open("POST", "grabarlista.php", true);
 	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xmlhttp.send("x=" + parametros); 
 }
-
+/** 
 function eliminar (a)
 {
 	var obj=a.id;
@@ -61,42 +60,51 @@ function editar (a)
 	
 var queryString = "?id=" + obj;	
 window.location.href = "../biblioteca/editar/editando.php" + queryString;
-/*
-	// convertimos el objeto a formato JSON
-	var parametros = JSON.stringify(obj);
-	
 
-// creamos un objeto XMLRequest
-	var xmlhttp = new XMLHttpRequest();
-
-// Una funcion para ejecutar SI TODO SALIO BIEN, es decir, si se pudo grabar en el servidor. OJO que se ejecuta DESPUES de grabar 
-	xmlhttp.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
-			var myObj1 = (this.responseText);
-				campo = registro.insertCell(-1);
-				campo.innerHTML = myObj1; //celda con el nombre
-		
-				
-				//var editar =JSON.stringify(myObj1);
-				var editar =myObj1;
-				var queryString = "?" + myObj1;
-				window.location.href = "../biblioteca/editar/editando.php" + queryString;
-			
-			
-								
-		}
-	};
-// Que hacer el usuario manda a editar
-	xmlhttp.open("POST", "traer_elemento.php", true);
-	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xmlhttp.send("x=" + parametros);*/
 	
 	
 }
+*/
 
+function leerlistas () {
+	var tabla = document.getElementById('mostrar_listas');
+	while(tabla.rows.length>1) tabla.deleteRow(1);
+	// creamos un objeto XMLRequest
+	var xmlhttp = new XMLHttpRequest();
+
+// Una funcion para ejecutar SI TODO SALIO BIEN, es decir, si se pudo leer del servidor. OJO que se ejecuta DESPUES de leer 
+	xmlhttp.onreadystatechange = function() {
+
+		
+		if (this.readyState == 4 && this.status == 200) {
+			var myObj = JSON.parse(this.responseText);
+				// Se supone que recibo un array de objetos donde cada item tiene tres campos. 
+			for (var i = 0; i < myObj.length; i++) {
+				registro = tabla.insertRow();
+
+				campo = registro.insertCell(-1);
+				campo.innerHTML = myObj[i].nombre; //celda con el nombre
+							
+				//campo = registro.insertCell(-1);
+				//campo.innerHTML = myObj[i].usuario_id;//celda con el uid
+				//muestro el id
+				//campo = registro.insertCell(-1);
+				//campo.innerHTML = myObj[i].id;
+							
+			}
+		}
+	};
+	xmlhttp.open("POST", "traer.php", true);
+	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");	
+	xmlhttp.send();
+}
 function leer () {
+leerlistas();
+
+
+
 //Esta funcion va a leer todo lo que este almacenado en la base de datos y lo coloca en una tabla
-	var tabla = document.getElementById('mostrar');
+var tabla = document.getElementById('mostrar');
 //vaciamos la tabla
 	while(tabla.rows.length>1) tabla.deleteRow(1);
 	
@@ -104,9 +112,9 @@ function leer () {
 	//valores de los filtros 			
     var nombre = document.getElementById("search").value;
     var tipo = document.getElementById("stipo").value;
-	var estado = document.getElementById("sestado").value;
+	var uid = document.getElementById("suid").value;
     var orden = document.getElementById("orden").value;	
-    var vars = "nombre="+nombre+"&tipo="+tipo+"&orden="+orden+"&estado="+estado;
+    var vars = "nombre="+nombre+"&tipo="+tipo+"&orden="+orden+"&uid="+uid;
 	
 
 // creamos un objeto XMLRequest
@@ -127,10 +135,9 @@ function leer () {
 				campo.innerHTML = myObj[i].nombre; //celda con el nombre
 				
 				campo = registro.insertCell(-1);
-				campo.innerHTML = myObj[i].estado;//celda con el estado
+				campo.innerHTML = myObj[i].uid;//celda con el uid
 				
-				campo = registro.insertCell(-1);
-				campo.innerHTML = myObj[i].tipo;//celda con el tipo
+			
 				
 				//muestro el id
 				//campo = registro.insertCell(-1);
@@ -171,4 +178,3 @@ function leer () {
 	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");	
 	xmlhttp.send( vars );
 }
-

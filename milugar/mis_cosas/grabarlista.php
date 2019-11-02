@@ -6,7 +6,7 @@ $obj = json_decode($_POST["x"], false);
 if ($obj->nombre != "")
 {
 	$obj->nombre=ucfirst($obj->nombre);
-	$mysqli->query("insert into elementos (nombre,estado,tipo) values ('".$obj->nombre."','".$obj->estado."','".$obj->tipo."')");
+	$mysqli->query("insert into listas (nombre,usuario_id) values ('".$obj->nombre."','".$obj->uid."')");
 echo  $mysqli->insert_id;
 
 }

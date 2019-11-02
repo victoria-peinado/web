@@ -8,7 +8,7 @@
 
 <link rel="stylesheet" href="../menu.css"> <!--eliminar el meno y usar el css global-->
   <link rel="stylesheet" href="cosas.css">
-  <script type="text/javascript" src="ejemplos2.js"></script>
+  <script type="text/javascript" src="cosas.js"></script>
 
 <title>Cosas</title>
 
@@ -32,7 +32,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 
 </style>
 </head>
-<body onload="leer();">
+<body onload="leerlistas();">
 <ul class="flexlist">
 	<li class="lbutton"><a href="../index.php">Mi Lugar</a></li>
 	<li class="lbutton"><a href="../biblioteca/biblioteca.php">Biblioteca</a></li>
@@ -49,11 +49,22 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 </ul>
 <div>
 	<agregar>
+	<?php
+			
+			if (isset($_SESSION['logged_id'])){
+				echo "Usuario:
+				";
+				echo $_SESSION['logged_id'];
+		 
+		
+	?>
 		<form name="aregara_lista">
 			<P>
 				<b>Agregar lista  -> </b>
 				Nombre:
-					<input type="text" id="nombre_elemento"> 
+					<input type="text" id="nombre_lista">
+					<input type="hidden" id="uid" name="custId" value="<?php echo intval($_SESSION['logged_id'])?>">
+					 
 					
 					<input type="button" value="Agregar" onclick="grabar();">
 					</p>
@@ -71,7 +82,19 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 	</div>
 	 
 </div>
+<?php
+include "../variables.inc";
+$mysqli = new mysqli($host, $user, $pass, $base);
+$consulta =  "select nombre from listas";
 
+
+
+
+$resu = $mysqli->query($consulta);
+
+
+
+?>
 <agregar>
  <form name ="filtros">
 	  
@@ -83,10 +106,27 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 					<option value="Publicandose">Publicandose</option>
 					<option value="Abandonado" >Abandonado</option>
 				</select>
-				
-				<select id="orden">
-					<option value="a-z" selected>A-Z</option>
-					<option value="z-a">Z-A</option>
+				<select id="stipo">
+					<option value="todo" selected>Todo</option>
+					<option value="anime">Animes</option>
+					<option value="manga">Mangas</option>
+					<option value="libro">Libros</option>
+					<option value="serie">Series</option>
+					<option value="pelicula">Peliculas</option>
+					<option value="otro">Otros</option>
+				</select>
+				<select> 
+					<option value="0">Todas</option>
+						<?php
+							while($row =($resu->fetch_assoc()))
+							{
+							?>
+							<option value = "<?php echo($row['nombre'])?>" >
+								<?php echo($row['nombre']) ?>
+							</option>
+							<?php
+							}               
+						?>
 				</select>
 				
 					<input type="button" value="Filtrar" onclick="leer();">
@@ -101,5 +141,9 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 		<th>Tipo</th>
 	  </tr>
 </table> 
+<?php
+
+}
+?>
 </body>
 </html>
