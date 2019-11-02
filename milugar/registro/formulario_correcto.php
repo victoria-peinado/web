@@ -13,7 +13,7 @@
 <body>
 
 <ul class="flexlist">
-	<li class="logo">[Logo]</li>
+	<li class="Logo">[Logo]</li>
 	<li class="lbutton"><a href="../index.php">Mi Lugar</a></li>
 	<li class="lbutton"><a href="../biblioteca/biblioteca.php">Biblioteca</a></li>
 	<li class="lbutton"><a href="../mis_cosas/cosas.php">Mis cosas</a></li>
