@@ -9,11 +9,11 @@
   left: 0;
   background-color: #404040; 
   overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 20px;
-  color:white;
+  padding-top: 10%;
   padding: 6px 8px 6px 16px;
+  color:white;
   position:absolute;
-  left:0; top:83px; bottom: 0;
+  left:0; top:0; bottom: 0;
 }
 
 /* The navigation menu links */

@@ -32,9 +32,17 @@
 	<!-- Page content -->
 	<div class="top">
 		<ul class="flexlist">
+			<li class="Logo"> <img src="librerialogo.png" height="35" style="margin: -10px"></li>
 			<li class="lbutton"><a href="../index.php">Mi Lugar</a></li>
 			<li class="lbutton"><a href="../biblioteca/biblioteca.php">Biblioteca</a></li>
-			<li class="lbutton"><a href="../mis_cosas/cosas.php">Mis cosas</a></li>
+			<?php
+				session_start();
+				if (isset($_SESSION['logged_nombre'])){
+					?>
+						<li class="lbutton"><a href="../mis_cosas/cosas.php">Mis cosas</a></li>
+				<?php
+				}
+			?>			
 			<li class="active">Mi Perfil</li>
 		</ul>
 	</div>
