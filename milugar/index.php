@@ -13,23 +13,23 @@
 <body>
 
 <ul class="flexlist">
-	<li class="Logo">[Logo]</li>
+	<li class="Logo"> <img src="librerialogo.png" height="35" style="margin: -10px"></li>
 	<li class="active">Mi Lugar</li>
 	<li class="lbutton"><a href="biblioteca/biblioteca.php">Biblioteca</a></li>
-	<li class="lbutton"><a href="mis_cosas/cosas.php">Mis cosas</a></li>
 	<?php
-		session_start();
+		session_start(); 
 		if (isset($_SESSION['logged_nombre'])){
-			?>
-				<li class="userbutton"><a href="perfil/perfil.php"><img src="https://img.icons8.com/ios-glyphs/50/000000/user.png"></a>
-			<?php
-				echo $_SESSION['logged_nombre'];
-			?>
-				</li>
+		?>
+				<li class="lbutton"><a href="mis_cosas/cosas.php">Mis cosas</a></li>
 		<?php
 		}
 	?>
-
+	<?php
+		if (isset($_SESSION['logged_nombre'])){
+		?>
+			<li class="userbutton"><a href="perfil/perfil.php"><img src="https://img.icons8.com/ios-glyphs/50/000000/user.png"> <br></a></li>	<?php
+		}
+	?>
 </ul>
 </div>
  <?php
