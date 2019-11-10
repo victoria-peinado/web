@@ -70,7 +70,6 @@ function leerlistas () {
 	var tabla = document.getElementById('mostrar_listas');
 	while(tabla.rows.length>1) tabla.deleteRow(1);
 	// creamos un objeto XMLRequest
-	
 	var xmlhttp = new XMLHttpRequest();
 
 // Una funcion para ejecutar SI TODO SALIO BIEN, es decir, si se pudo leer del servidor. OJO que se ejecuta DESPUES de leer 
@@ -97,7 +96,7 @@ function leerlistas () {
 	};
 	xmlhttp.open("POST", "traer.php", true);
 	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");	
-	
+	xmlhttp.send();
 }
 function leer () {
 leerlistas();
