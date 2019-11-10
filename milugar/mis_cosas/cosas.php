@@ -34,41 +34,41 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 </head>
 <body onload="leerlistas();">
 <ul class="flexlist">
-	<li class="Logo"> <img src="../librerialogo.png" height="35" style="margin: -10px"></li>
+	<li class="Logo">[Logo]</li>
 	<li class="lbutton"><a href="../index.php">Mi Lugar</a></li>
 	<li class="lbutton"><a href="../biblioteca/biblioteca.php">Biblioteca</a></li>
 	<li class="active">Mis cosas</li>
 	<?php
-		if(!isset($_SESSION)) 
-		{ 
-			session_start();
-			if (isset($_SESSION['logged_nombre'])){
-				?>
-					<li class="userbutton"><a href="../perfil/perfil.php"><img src="https://img.icons8.com/ios-glyphs/50/000000/user.png"></a>
-				<?php
-					echo $_SESSION['logged_nombre'];
-				?>
-					</li>
-			<?php
-			}
-		}
+	session_start();
+   if (isset($_SESSION['logged_nombre'])){
 	?>
+		<li class="lbutton"><a href="../perfil/perfil.php">Mi Perfil</a></li>
+	<?php
+	}
+	?>
+	
 </ul>
 <div>
 	<agregar>
 	<?php
-		if (isset($_SESSION['logged_id'])){		 
+			
+			if (isset($_SESSION['logged_id'])){
+				echo "Usuario:
+				";
+				echo $_SESSION['logged_id'];
+		 
+		
 	?>
-		<form name="aregara_lista" class="linea">
-			<div id="left">
-				<b>Agregar lista</b>
-			</div>
-			<div id="right">
+		<form name="aregara_lista">
+			<P>
+				<b>Agregar lista  -> </b>
 				Nombre:
 					<input type="text" id="nombre_lista">
-					<input type="hidden" id="uid" name="custId" value="<?php echo intval($_SESSION['logged_id'])?>">		
+					<input type="hidden" id="uid" name="custId" value="<?php echo intval($_SESSION['logged_id'])?>">
+					 
+					
 					<input type="button" value="Agregar" onclick="grabar();">
-			</div>
+					</p>
 		</form> 
 	</agregar>
 	<div>

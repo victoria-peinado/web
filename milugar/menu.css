@@ -44,6 +44,7 @@ ul {
 	 color: white;
 	 width: 20%;
 	 text-align: center;
+	 padding: 1%;
 	 font-size: 25px;
 	float: left;
 	height: 10%;
@@ -51,12 +52,6 @@ ul {
 
 .lbutton:hover{
 	background-color: #000000;
-}
-
-img{
-	max-width:100%;
-	height:auto;
-	width:auto;
 }
 
 .userbuttton {
@@ -76,18 +71,4 @@ img{
 
 li {
 	float:left;
-}
-
-.linea{
-	display:inline;
-}
-
-#right{
-	position: relative;
-}
-
-#left{
-	float:left;
-	position: absolute;
-	right:0;
 }
